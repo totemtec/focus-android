@@ -15,7 +15,7 @@ object WebViewProvider : IWebViewProvider {
     var engine: IWebViewProvider? = null
 
     fun determineEngine(): IWebViewProvider {
-        engine = GeckoWebViewProvider()
+        engine = ClassicWebViewProvider()
         return engine!!
     }
 

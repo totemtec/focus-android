@@ -33,6 +33,7 @@ import org.mozilla.focus.utils.ExperimentsSyncService
 import org.mozilla.focus.utils.Settings
 import org.mozilla.focus.utils.SupportUtils
 import org.mozilla.focus.utils.ViewUtils
+import org.mozilla.focus.web.ClassicWebViewProvider
 import org.mozilla.focus.web.IWebView
 import org.mozilla.focus.web.WebViewProvider
 
@@ -295,7 +296,7 @@ open class MainActivity : LocaleAwareAppCompatActivity() {
     override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
         return if (name == IWebView::class.java.name) {
             // Inject our implementation of IWebView from the WebViewProvider.
-            WebViewProvider.create(this, attrs)
+            ClassicWebViewProvider().create(this, attrs)
         } else super.onCreateView(name, context, attrs)
     }
 

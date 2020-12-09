@@ -103,8 +103,10 @@ class Settings private constructor(context: Context) {
     fun shouldShowFirstrun(): Boolean =
             !preferences.getBoolean(FirstrunFragment.FIRSTRUN_PREF, false)
 
-    fun isFirstGeckoRun(): Boolean =
-            preferences.getBoolean(GeckoWebViewProvider.PREF_FIRST_GECKO_RUN, true)
+
+    //TOD: majianglin
+    fun isFirstGeckoRun(): Boolean = false;
+//            preferences.getBoolean(GeckoWebViewProvider.PREF_FIRST_GECKO_RUN, true)
 
     fun shouldUseBiometrics(): Boolean =
             preferences.getBoolean(getPreferenceKey(R.string.pref_key_biometric), false)

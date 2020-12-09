@@ -20,6 +20,14 @@ android {
         multiDexEnabled true
     }
 
+    aaptOptions {
+        ignoreAssetsPattern "!omni.ja"
+    }
+
+    packagingOptions {
+        exclude '**/*.so'
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -55,7 +63,7 @@ android {
         }
     }
 
-    flavorDimensions "product", "abi"
+    flavorDimensions "product"
 
     productFlavors {
         // In most countries we are Firefox Focus - but in some we need to be Firefox Klar
@@ -70,24 +78,24 @@ android {
             applicationIdSuffix ".klar"
         }
 
-        arm {
-            dimension "abi"
-            ndk {
-                abiFilter "armeabi-v7a"
-            }
-        }
-        aarch64 {
-            dimension "abi"
-            ndk {
-                abiFilter "arm64-v8a"
-            }
-        }
-        x86 {
-            dimension "abi"
-            ndk {
-                abiFilter "x86"
-            }
-        }
+//        arm {
+//            dimension "abi"
+//            ndk {
+//                abiFilter "armeabi-v7a"
+//            }
+//        }
+//        aarch64 {
+//            dimension "abi"
+//            ndk {
+//                abiFilter "arm64-v8a"
+//            }
+//        }
+//        x86 {
+//            dimension "abi"
+//            ndk {
+//                abiFilter "x86"
+//            }
+//        }
     }
 
     sourceSets {
@@ -101,31 +109,34 @@ android {
         }
 
         // Release
-        focusX86Release.root = 'src/focusRelease'
-        focusArmRelease.root = 'src/focusRelease'
-        focusAarch64Release.root = 'src/focusRelease'
+//        focusX86Release.root = 'src/focusRelease'
+//        focusArmRelease.root = 'src/focusRelease'
+//        focusAarch64Release.root = 'src/focusRelease'
 
-        klarX86Release.root = 'src/klarRelease'
-        klarArmRelease.root = 'src/klarRelease'
-        klarAarch64Release.root = 'src/klarRelease'
+        focusRelease.root = 'src/focusRelease'
+
+//        klarX86Release.root = 'src/klarRelease'
+//        klarArmRelease.root = 'src/klarRelease'
+//        klarAarch64Release.root = 'src/klarRelease'
 
         // Debug
-        focusX86Debug.root = 'src/focusDebug'
-        focusArmDebug.root = 'src/focusDebug'
-        focusAarch64Debug.root = 'src/focusDebug'
+//        focusX86Debug.root = 'src/focusDebug'
+//        focusArmDebug.root = 'src/focusDebug'
+//        focusAarch64Debug.root = 'src/focusDebug'
+        focusDebug.root = 'src/focusDebug'
 
-        klarX86Debug.root = 'src/klarDebug'
-        klarArmDebug.root = 'src/klarDebug'
-        klarAarch64Debug.root = 'src/klarDebug'
+//        klarX86Debug.root = 'src/klarDebug'
+//        klarArmDebug.root = 'src/klarDebug'
+//        klarAarch64Debug.root = 'src/klarDebug'
 
         // Nightly
-        focusX86Nightly.root = 'src/focusNightly'
-        focusArmNightly.root = 'src/focusNightly'
-        focusAarch64Nightly.root = 'src/focusNightly'
-
-        klarX86Nightly.root = 'src/klarNightly'
-        klarArmNightly.root = 'src/klarNightly'
-        klarAarch64Nightly.root = 'src/klarNightly'
+//        focusX86Nightly.root = 'src/focusNightly'
+//        focusArmNightly.root = 'src/focusNightly'
+//        focusAarch64Nightly.root = 'src/focusNightly'
+//
+//        klarX86Nightly.root = 'src/klarNightly'
+//        klarArmNightly.root = 'src/klarNightly'
+//        klarAarch64Nightly.root = 'src/klarNightly'
     }
 
     packagingOptions {
